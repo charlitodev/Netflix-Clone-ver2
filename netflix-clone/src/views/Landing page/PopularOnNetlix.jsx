@@ -1,19 +1,30 @@
-import React from "react";
-import { movieData } from "../../data/indexData";
+import React, { useContext } from "react";
+import { ContextProvider } from "../../context/contextConfig";
+import { MediaDetails } from "../../components";
 
-const PopularMovies = () => {
+const PopularOnNetflix = () => {
+  const { handleHoverActive, handleHoverLeave, mapData } =
+    useContext(ContextProvider);
+
   return (
-    <div className="new__release">
-      <p className="new__release__title">Popular on Netlix</p>
+    <div className="popular__on__netflix">
+      <p className="new__release__title">Popular on Netflix</p>
       <div className="new__release__movie__container">
-        {movieData.map((item, id) => {
+        {mapData.map((item) => {
           return (
-            <img
-              key={id}
-              src={item.poster}
-              alt={item.poster}
-              className="movie__poster"
-            />
+            <div
+              key={item.id}
+              className="movie__poster__container"
+              onMouseEnter={() => handleHoverActive(item)}
+              onMouseLeave={() => handleHoverLeave(item)}
+            >
+              <img
+                src={item.poster}
+                alt={item.poster}
+                className="movie__poster"
+              />
+              {item.isHovered && <MediaDetails />}
+            </div>
           );
         })}
       </div>
@@ -21,4 +32,4 @@ const PopularMovies = () => {
   );
 };
 
-export default PopularMovies;
+export default PopularOnNetflix;

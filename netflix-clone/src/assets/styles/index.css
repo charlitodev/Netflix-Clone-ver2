@@ -6,21 +6,51 @@
 }
 
 body {
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(8, 8, 8);
   color: #fff;
 }
 
 .nav {
-  padding: 1.5em 2em;
+  padding: 1em 3em;
   display: flex;
   justify-content: space-between;
   color: #fff;
   align-items: center;
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(6, 6, 6);
 }
 
 .nav__right__panel {
   display: flex;
+}
+
+.nav__left__panel {
+  display: flex;
+  align-items: center;
+}
+
+.nav__icon {
+  font-size: 20px;
+}
+
+.netflix__avatar {
+  width: 30px;
+  border-radius: 5px;
+}
+
+.notification__bar {
+  position: relative;
+}
+
+.nav__badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.2em;
+  border-radius: 10px;
+  font-size: 12px;
 }
 
 .nav img {
@@ -38,13 +68,14 @@ body {
 }
 
 .hero {
-  padding: 1.5em 2em;
-  height: 60vh;
+  padding: 1.5em 3em;
+  height: 70vh;
+  position: relative;
 }
 
 .hero__right__panel {
   width: 500px;
-  margin-top: 10em;
+  margin-top: 8em;
 }
 
 .hero__title {
@@ -73,11 +104,25 @@ body {
   border-radius: 3px;
   padding: 10px 20px;
   border: none;
+  cursor: pointer;
+}
+
+.hero__moreInfo__button {
+  background-color: rgb(50, 50, 50);
+  color: #fff;
 }
 
 .new__release,
-.tv__shows {
-  padding: 1.5em 2em;
+.tv__shows,
+.media__index,
+.popular__on__netflix,
+.footer {
+  padding: 0.5em 3em;
+}
+
+.new__release {
+  position: absolute;
+  bottom: 5em;
 }
 
 .new__release__title {
@@ -86,20 +131,51 @@ body {
   margin: 0.5em 0;
 }
 
+.movie__poster__container,
+.ranking__shows {
+  position: relative;
+  transition: transform 0.6s;
+  transition-delay: 0.3s;
+}
+
 .movie__poster {
-  width: 300px;
+  width: 300px !important;
   height: 150px;
   object-fit: cover;
   border-radius: 5px;
   margin-right: 0.5em;
 }
 
+.movie__poster__details {
+  background-color: rgb(73, 73, 73);
+  width: 98%;
+  position: absolute;
+  bottom: -60px;
+  border-radius: 0 0 10px 10px;
+  padding: 0.5em;
+}
+
+.movie__poster__container:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.parent__ranking__container {
+  transition: transform 0.6s;
+  transition-delay: 0.3s;
+}
+
+.parent__ranking__container:hover {
+  transform: scale(1.5, 1.2);
+  z-index: 1;
+}
+
 .ranking__movie__poster {
-  width: 150px;
+  width: 150px !important;
   height: 200px;
   object-fit: cover;
-  margin-right: 2em;
   border-radius: 5px;
+  margin-right: 0.5em;
 }
 
 .new__release__movie__container {
@@ -108,11 +184,99 @@ body {
 
 .ranking__shows {
   display: flex;
+  align-items: center;
+  position: relative;
+  left: 5em;
+  margin: 0 4em;
 }
 
 .ranking__number {
-  font-size: 10em;
+  position: absolute;
+  z-index: -1;
+  left: -0.5em;
+  font-size: 15em;
   font-weight: bold;
   color: black;
-  -webkit-text-stroke: 2px rgb(132, 132, 132);
+  -webkit-text-stroke: 3px rgb(123, 123, 123);
+}
+
+.movie__details__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie__details__header .header_cta {
+  display: flex;
+}
+
+.movie__details__header .header_cta i {
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
+.movie__details__ratings {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.movie__details__ratings small {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.movie__age__rest,
+.movie__details__quality {
+  padding: 2px;
+  border: 1px solid white;
+}
+
+.movie__details__genre ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.movie__details__genre ul li {
+  margin-right: 1em;
+  font-size: 12px;
+}
+
+.footer {
+  margin: 8em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  margin-right: 3em;
+}
+
+.footer .col .socials {
+  display: flex;
+}
+
+.footer .col .socials i {
+  margin-right: 10px;
+  font-size: 2em;
+  color: rgb(105, 105, 105);
+}
+
+.col ul li {
+  color: rgb(105, 105, 105);
+  margin: 1em 0;
+  list-style-type: none;
+}
+
+.col button {
+  margin: 1em 0;
+  background: none;
+  border: 1px solid rgb(105, 105, 105);
+  color: #fff;
+  padding: 1em;
+}
+
+.col small {
+  color: rgb(105, 105, 105);
 }

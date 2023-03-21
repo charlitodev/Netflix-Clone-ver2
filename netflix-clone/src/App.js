@@ -1,22 +1,26 @@
 import "./assets/styles/index.css";
-import { Navbar } from "./components";
+import { Navbar, Footer } from "./components";
 import {
   Hero,
   NewReleases,
-  TopTVShows,
+  PopularOnNetflix,
   TopMovies,
-  PopularMovies,
+  TopTVShows,
 } from "./views";
+import { ContextFunction } from "./context/contextConfig";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
-      <NewReleases />
-      <TopTVShows />
-      <TopMovies />
-      <PopularMovies />
+      <ContextFunction>
+        <Navbar />
+        <Hero />
+        <NewReleases />
+        <TopMovies />
+        <TopTVShows />
+        <PopularOnNetflix />
+        <Footer />
+      </ContextFunction>
     </div>
   );
 }
